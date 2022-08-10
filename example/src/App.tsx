@@ -1,15 +1,18 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { inAppReviewFlowRequest, inAppReviewShow } from 'react-native-inapp-review-rating';
+import {
+  inAppReviewFlowRequest,
+  inAppReviewShow,
+} from 'react-native-inapp-review-rating';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [result] = React.useState<number | undefined>();
 
   React.useEffect(() => {
-    inAppReviewFlowRequest().then(()=>{
-          inAppReviewShow().then(()=>{})
-        });
+    inAppReviewFlowRequest().then(() => {
+      inAppReviewShow().then(() => {});
+    });
   }, []);
 
   return (

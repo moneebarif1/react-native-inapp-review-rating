@@ -9,8 +9,14 @@ npm install react-native-inapp-review-rating
 ## Usage
 
 ```js
-import { multiply } from "react-native-inapp-review-rating";
+inAppReviewFlowRequest().then(()=>{
+                    inAppReviewShow().then(()=>{
+                        saveItem(showInAppReviewOnceKey, true);
+                        shopCashAnalytics.logEventForFireBase('show_inappreviewrating', {
+                        on_show_inappreviewrating: true,
 
+                    })
+        });
 // ...
 
 const result = await multiply(3, 7);
