@@ -35,7 +35,10 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/moneebarif1/react-native-inapp-review-rating",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moneebarif1/react-native-inapp-review-rating.git"
+  },
   "author": "moneebarif <45369702+moneebarif1@users.noreply.github.com> (https://github.com/moneebarif1)",
   "license": "MIT",
   "bugs": {
@@ -147,5 +150,8 @@
         }
       ]
     ]
+  },
+  "directories": {
+    "example": "example"
   }
 }
