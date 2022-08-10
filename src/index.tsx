@@ -15,6 +15,10 @@ const InappReviewRating = NativeModules.InappReviewRating  ? NativeModules.Inapp
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return InappReviewRating.multiply(a, b);
+export function inAppReviewFlowRequest(): Promise<boolean> {
+   return InappReviewRating.requestReviewFlow();
+}
+
+export function inAppReviewShow(): Promise<boolean> {
+   return InappReviewRating.showInAppReviewFlow();
 }

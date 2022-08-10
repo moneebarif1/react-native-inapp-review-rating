@@ -1,13 +1,15 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-inapp-review-rating';
+import { inAppReviewFlowRequest, inAppReviewShow } from 'react-native-inapp-review-rating';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    inAppReviewFlowRequest().then(()=>{
+          inAppReviewShow().then(()=>{})
+        });
   }, []);
 
   return (

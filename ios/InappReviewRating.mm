@@ -1,4 +1,6 @@
 #import "InappReviewRating.h"
+#import <StoreKit/StoreKit.h>
+
 
 #ifdef RCT_NEW_ARCH_ENABLED
 #import "RNInappReviewRatingSpec.h"
@@ -7,16 +9,19 @@
 @implementation InappReviewRating
 RCT_EXPORT_MODULE()
 
-// Example method
-// See // https://reactnative.dev/docs/native-modules-ios
-RCT_REMAP_METHOD(multiply,
-                 multiplyWithA:(double)a withB:(double)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXPORT_METHOD(requestReviewFlow:(RCTPromiseResolveBlock)resolve
+              getName_rejecter:(RCTPromiseRejectBlock)reject)
 {
-  NSNumber *result = @(a * b);
+    resolve(@"Success");
+}
 
-  resolve(result);
+RCT_EXPORT_METHOD(showInAppReviewFlow:(RCTPromiseResolveBlock)resolve
+              getName_rejecter:(RCTPromiseRejectBlock)reject)
+{
+    if (@available(iOS 10.3, *)) {
+      [SKStoreReviewController requestReview];
+    }
+    resolve(@"Success");
 }
 
 // Don't compile this code when we build for the old architecture.
