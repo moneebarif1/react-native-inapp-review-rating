@@ -10,12 +10,6 @@ npm install react-native-inapp-review-rating
 
 ```js
 inAppReviewFlowRequest().then(()=>{
-                    inAppReviewShow().then(()=>{
-                        saveItem(showInAppReviewOnceKey, true);
-                        shopCashAnalytics.logEventForFireBase('show_inappreviewrating', {
-                        on_show_inappreviewrating: true,
-
-                    })
         });
 // ...
 
